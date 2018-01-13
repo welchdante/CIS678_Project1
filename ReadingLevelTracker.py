@@ -82,6 +82,6 @@ class ReadingLevelTracker:
 		return self.reading_level
 
 example = ReadingLevelTracker(0, 0, 0)
-text_string = example.read_file('test.txt')
+text_string = example.read_file('book.txt')
 example.find_information(text_string)
 print(example.calculate_reading_level())
