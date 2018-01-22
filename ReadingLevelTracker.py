@@ -13,7 +13,7 @@ class ReadingLevelTracker:
             data = myfile.read().replace('\n', '')
         return data
 
-    def find_information(self, text_string):
+    def find_metrics(self, text_string):
         self.num_words_in_document(text_string)
         self.num_sentences_in_document(text_string)
         self.num_syllables_in_document(text_string)
@@ -45,7 +45,7 @@ class ReadingLevelTracker:
         self.handle_special_cases(word)
 
         return self.num_syllables
-
+    
     def iterate_word(self, word):
         for letter in self.current_word:
             if letter in self.vowels:
@@ -82,7 +82,8 @@ class ReadingLevelTracker:
 
         return self.reading_level
 
+#What I ran every time I wanted the score for a specific body of text
 example = ReadingLevelTracker(0, 0, 0)
 text_string = example.read_file('book.txt')
-example.find_information(text_string)
+example.find_metrics(text_string)
 print("Score:             ", example.calculate_reading_level())
